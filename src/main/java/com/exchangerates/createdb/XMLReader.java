@@ -1,4 +1,4 @@
-package com.exchangerates.createDB;
+package com.exchangerates.createdb;
 
 import com.exchangerates.dto.ExchangeRate;
 import org.w3c.dom.CharacterData;

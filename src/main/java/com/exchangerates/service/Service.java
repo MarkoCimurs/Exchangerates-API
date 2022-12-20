@@ -6,6 +6,7 @@ import io.javalin.http.Context;
 import io.javalin.http.HttpStatus;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
 
 public class Service {
@@ -17,7 +18,7 @@ public class Service {
                     .status(HttpStatus.OK)
                     .statusCode(HttpStatus.OK.getCode())
                     .message("Newest exchange rates from euro")
-                    .data(Map.of("ExchangeRates", ExchangerateDao.getNewestCurrencyRates()))
+                    .data(ExchangerateDao.getNewestCurrencyRates())
                     .build()
             );
         } catch (SQLException e) {
@@ -39,7 +40,7 @@ public class Service {
                     .status(HttpStatus.OK)
                     .statusCode(HttpStatus.OK.getCode())
                     .message("Exchange rates from euro to " + context.pathParam("currency"))
-                    .data(Map.of("ExchangeRates", ExchangerateDao.getSpecificCurrency(context.pathParam("currency"))))
+                    .data(ExchangerateDao.getSpecificCurrency(context.pathParam("currency")))
                     .build()
             );
         } catch (SQLException e) {

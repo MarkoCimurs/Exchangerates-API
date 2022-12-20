@@ -1,7 +1,6 @@
-package com.exchangerates.createDB;
+package com.exchangerates.createdb;
 
 import com.exchangerates.dao.ExchangerateDao;
-import com.exchangerates.datasource.DataSource;
 import com.exchangerates.dto.ExchangeRate;
 import org.flywaydb.core.Flyway;
 
@@ -13,8 +12,8 @@ public class CreateDB {
         try{
             Flyway flyway = Flyway.configure().dataSource(
                     "jdbc:mariadb://localhost:3306",
-                    "user1",
-                    "password1"
+                    "root",
+                    "password"
             ).schemas("exchangeRates").load();
             flyway.migrate();
 

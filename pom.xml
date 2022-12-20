@@ -23,7 +23,7 @@
                     <execution>
                         <id>create-database</id>
                         <configuration>
-                            <mainClass>com.exchangerates.createDB.CreateDB</mainClass>
+                            <mainClass>com.exchangerates.createdb.CreateDB</mainClass>
                         </configuration>
                     </execution>
                     <execution>
